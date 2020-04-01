@@ -3,7 +3,6 @@ package com.akagami.order.service;
 import com.akagami.order.model.Customer;
 import com.akagami.order.model.dto.CustomerDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -13,7 +12,7 @@ public class CustomerService {
     private final CustomerDto customerDto;
 
     @Autowired
-    public CustomerService(@Qualifier("CustomerDto") CustomerDto customerDto) {
+    public CustomerService( CustomerDto customerDto) {
         this.customerDto = customerDto;
     }
 

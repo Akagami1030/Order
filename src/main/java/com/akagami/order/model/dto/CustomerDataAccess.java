@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Repository("CustomerDto")
+@Repository
 public class CustomerDataAccess implements CustomerDto {
     private List<Customer> db = new ArrayList<>();
 
