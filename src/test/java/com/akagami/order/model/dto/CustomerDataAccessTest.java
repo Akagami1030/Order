@@ -2,12 +2,11 @@ package com.akagami.order.model.dto;
 
 import com.akagami.order.model.Customer;
 
-import org.assertj.core.api.Assertions;
+import com.akagami.order.model.dto.dataaccess.CustomerDataAccess;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerDataAccessTest {
     CustomerDataAccess customerDataAccess;

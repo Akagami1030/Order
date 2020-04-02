@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ItemTest {
     @Test
     public void newItemIsEqualTheInputValues(){
-        Item item = new Item("Shoes","Smart shoes",45);
+        Item item = new Item("Shoes","Smart shoes",45,60);
         String actualName = item.getName();
         assertThat(item.getName()).isEqualTo(actualName);
     }

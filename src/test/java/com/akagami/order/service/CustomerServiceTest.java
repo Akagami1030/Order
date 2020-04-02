@@ -1,7 +1,7 @@
 package com.akagami.order.service;
 
 import com.akagami.order.model.Customer;
-import com.akagami.order.model.dto.CustomerDataAccess;
+import com.akagami.order.model.dto.dataaccess.CustomerDataAccess;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

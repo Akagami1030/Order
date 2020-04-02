@@ -1,6 +1,7 @@
 package com.akagami.order.model.dto;
 
 import com.akagami.order.model.Item;
+import com.akagami.order.model.dto.dataaccess.ItemDataAccess;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,9 +19,9 @@ class ItemDataAccessTest {
     @BeforeEach
     void setup(){
         itemDataAccess = new ItemDataAccess();
-        item1 = new Item("Nike","Shoes for running",25);
-        item2 = new Item("Adidas","Shoes for running",15);
-        item3 = new Item("Reebok","Shoes for running",0);
+        item1 = new Item("Nike","Shoes for running",25,25);
+        item2 = new Item("Adidas","Shoes for running",15,15);
+        item3 = new Item("Reebok","Shoes for running",0,75);
         itemDataAccess.insertItem(item1);
         itemDataAccess.insertItem(item2);
         itemDataAccess.insertItem(item3);

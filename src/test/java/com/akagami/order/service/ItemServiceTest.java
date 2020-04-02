@@ -1,7 +1,7 @@
 package com.akagami.order.service;
 
 import com.akagami.order.model.Item;
-import com.akagami.order.model.dto.ItemDataAccess;
+import com.akagami.order.model.dto.dataaccess.ItemDataAccess;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,9 +20,9 @@ class ItemServiceTest {
     @BeforeEach
     void setup() {
         itemService = new ItemService(itemDataAccess);
-        item1 = new Item("Nike", "Shoes for running", 25);
-        item2 = new Item("Adidas", "Shoes for running", 15);
-        item3 = new Item("Reebok", "Shoes for running", 0);
+        item1 = new Item("Nike", "Shoes for running", 25,36);
+        item2 = new Item("Adidas", "Shoes for running", 15,25);
+        item3 = new Item("Reebok", "Shoes for running", 0,12.5);
         itemService.addItemInTheDb(item1);
         itemService.addItemInTheDb(item2);
         itemService.addItemInTheDb(item3);

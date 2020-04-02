@@ -1,6 +1,7 @@
-package com.akagami.order.model.dto;
+package com.akagami.order.model.dto.dataaccess;
 
 import com.akagami.order.model.Customer;
+import com.akagami.order.model.dto.CustomerDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
