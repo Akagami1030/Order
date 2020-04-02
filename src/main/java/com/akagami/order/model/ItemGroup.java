@@ -1,38 +1,27 @@
 package com.akagami.order.model;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 public class ItemGroup {
-    private final UUID idItemGroup;
-    private UUID itemId;
+    private Item selectedItem;
     private int amount;
-    private LocalDate shippingDate;
+    private LocalDate localDate;
 
-    public ItemGroup(UUID item, int amount) {
-        this.idItemGroup = UUID.randomUUID();
-        this.itemId = item;
+    public ItemGroup(Item selectedItem, int amount) {
+        this.selectedItem = selectedItem;
         this.amount = amount;
-        this.shippingDate = LocalDate.now();
+        this.localDate = LocalDate.now();
     }
 
-    public UUID getIdItemGroup() {
-        return idItemGroup;
-    }
-
-    public UUID getItemId() {
-        return itemId;
+    public Item getSelectedItem() {
+        return selectedItem;
     }
 
     public int getAmount() {
         return amount;
     }
 
-    public LocalDate getShippingDate() {
-        return shippingDate;
-    }
-
-    public void setShippingDate(LocalDate shippingDate) {
-        this.shippingDate = shippingDate;
+    public LocalDate getLocalDate() {
+        return localDate;
     }
 }

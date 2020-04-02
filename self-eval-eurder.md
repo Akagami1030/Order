@@ -37,7 +37,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [x] Basic setup / skeleton for Spring Boot & Maven
  - [x] I have my first REST Controller ready
  - [x] I commit/push my code on a regular basis
- - [ ] Swagger is enabled
+ - [x] Swagger is enabled
 ### Comments:
 ## Story 1
  - [x] The functional requirements are implemented

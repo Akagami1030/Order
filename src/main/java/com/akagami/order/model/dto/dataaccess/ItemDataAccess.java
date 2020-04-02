@@ -1,6 +1,7 @@
 package com.akagami.order.model.dto.dataaccess;
 
 import com.akagami.order.model.Item;
+import com.akagami.order.model.ItemGroup;
 import com.akagami.order.model.dto.ItemDto;
 import org.springframework.stereotype.Repository;
 
@@ -33,4 +34,6 @@ public class ItemDataAccess implements ItemDto {
     public List<Item> getItemsAvailables() {
         return db.stream().filter(item -> item.getAmount() > 0).collect(Collectors.toList());
     }
+
+
 }

@@ -4,34 +4,34 @@ import java.util.List;
 import java.util.UUID;
 
 public class Order {
-    private final UUID idOrder;
-    private final Customer idCustomer;
-    private List<ItemGroup> listOfItemsGroup;
-    private double price;
+    private UUID idOrder;
+    private List<ItemGroup> itemGroupList;
+    private double totalPrice;
+    private Customer customer;
 
-    public Order(Customer idCustomer, List<ItemGroup> listOfItemsGroup) {
+    public Order(List<ItemGroup> itemGroupList,Customer customer) {
         this.idOrder = UUID.randomUUID();
-        this.idCustomer = idCustomer;
-        this.listOfItemsGroup = listOfItemsGroup;
+        this.itemGroupList = itemGroupList;
+        this.customer = customer;
     }
 
     public UUID getIdOrder() {
         return idOrder;
     }
 
-    public Customer getIdCustomer() {
-        return idCustomer;
+    public List<ItemGroup> getItemGroupList() {
+        return itemGroupList;
     }
 
-    public List<ItemGroup> getListOfItemsGroup() {
-        return listOfItemsGroup;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    public double getPrice() {
-        return price;
+    public Customer getCustomer() {
+        return customer;
     }
 }
