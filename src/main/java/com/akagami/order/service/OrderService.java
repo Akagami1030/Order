@@ -27,9 +27,6 @@ public class OrderService {
     }
 
     public void addNewOrder(Order order){
-        Customer userById = customerDto.getUserById(order.getIdCustomer());
-
-
         orderDto.insertOrder(order);
     }
 
