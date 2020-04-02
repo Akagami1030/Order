@@ -5,6 +5,7 @@ import com.akagami.order.model.dto.CustomerDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -20,7 +21,9 @@ public class CustomerService {
         customerDto.insertCustomer(customer);
     }
 
-    public Customer getUserById(UUID id){
+    public Customer getCustomerById(UUID id){
        return customerDto.getUserById(id);
     }
+
+    public List<Customer> getAllCustomers(){return customerDto.getAllCustomer();}
 }

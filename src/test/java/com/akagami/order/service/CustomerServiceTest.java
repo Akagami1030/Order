@@ -2,13 +2,10 @@ package com.akagami.order.service;
 
 import com.akagami.order.model.Customer;
 import com.akagami.order.model.dto.CustomerDataAccess;
-import com.akagami.order.model.dto.CustomerDto;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerServiceTest {
     CustomerDataAccess customerDataAccess;
@@ -25,7 +22,7 @@ class CustomerServiceTest {
     @Test
     void testIfWeCanAddACustomerAndGetIt(){
         customerService.addCustomer(customer);
-        Customer actualCustomer = customerService.getUserById(customer.getIdCustomer());
+        Customer actualCustomer = customerService.getCustomerById(customer.getIdCustomer());
         assertThat(customer.getIdCustomer()).isEqualTo(actualCustomer.getIdCustomer());
     }
 

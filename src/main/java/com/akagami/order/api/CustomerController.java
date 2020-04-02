@@ -4,8 +4,10 @@ import com.akagami.order.model.Customer;
 import com.akagami.order.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -22,12 +24,20 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.CREATED)
     public Customer createCustomerAndSaveCustomer(@RequestBody Customer customer) {
         customerService.addCustomer(customer);
-        return customerService.getUserById(customer.getIdCustomer());
+        return customerService.getCustomerById(customer.getIdCustomer());
     }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(produces = "application/json", path = "/{id}")
+    @PreAuthorize("hasAuthority('Admin')")
     public Customer getUserById(@PathVariable UUID id) {
-        return customerService.getUserById(id);
+        return customerService.getCustomerById(id);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(produces = "application/json")
+    @PreAuthorize("hasAuthority('Admin')")
+    public List<Customer> getAllCustomers() {
+        return customerService.getAllCustomers();
     }
 }

@@ -21,4 +21,9 @@ public class CustomerDataAccess implements CustomerDto {
         return db.stream().filter(customer -> customer.getIdCustomer().equals(id)).findFirst().orElse(null);
     }
 
+    @Override
+    public List<Customer> getAllCustomer() {
+        return db;
+    }
+
 }
