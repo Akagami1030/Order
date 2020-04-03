@@ -9,10 +9,11 @@ public class Order {
     private double totalPrice;
     private Customer customer;
 
-    public Order(List<ItemGroup> itemGroupList,Customer customer) {
+    public Order(List<ItemGroup> itemGroupList, Customer customer) {
         this.idOrder = UUID.randomUUID();
         this.itemGroupList = itemGroupList;
         this.customer = customer;
+        totalPrice = calculateTotalPrice();
     }
 
     public UUID getIdOrder() {
@@ -32,6 +33,9 @@ public class Order {
         return customer;
     }
 
-
+    private double calculateTotalPrice() {
+        return itemGroupList.stream()
+                .mapToDouble(item -> item.getSelectedItem().getPrice() * item.getAmount()).sum();
+    }
 
 }

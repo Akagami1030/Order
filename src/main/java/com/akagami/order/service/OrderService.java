@@ -33,7 +33,6 @@ public class OrderService {
         Customer userById = customerDto.getUserById(customer.getIdCustomer());
         Order newOrder = new Order(getAllItemGroups(),userById);
         orderDto.insertOrder(newOrder);
-        itemGroupDto.cleanTempDb();
         return newOrder;
 
     }
