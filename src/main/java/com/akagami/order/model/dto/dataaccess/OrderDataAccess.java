@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
 @Repository
 public class OrderDataAccess implements OrderDto {
     private List<Order> db = new ArrayList<>();
@@ -19,6 +20,6 @@ public class OrderDataAccess implements OrderDto {
 
     @Override
     public Order getOrderById(UUID id) {
-      return db.stream().filter(order -> order.getIdOrder().equals(id)).findFirst().orElse(null);
+        return db.stream().filter(order -> order.getIdOrder().equals(id)).findFirst().orElse(null);
     }
 }
