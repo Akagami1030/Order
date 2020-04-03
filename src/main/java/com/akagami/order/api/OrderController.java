@@ -26,7 +26,7 @@ public class OrderController {
         orderService.addNewItem(item);
     }
     @PostMapping(consumes = "application/json", produces = "application/json", path = "/myorder")
-    public Order makeNewOrder(Customer customer){
+    public Order makeNewOrder(@RequestBody Customer customer){
         Order order = orderService.makeNewOrder(customer);
         return orderService.getOrderById(order.getIdOrder());
 
