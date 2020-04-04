@@ -22,4 +22,9 @@ public class OrderDataAccess implements OrderDto {
     public Order getOrderById(UUID id) {
         return db.stream().filter(order -> order.getIdOrder().equals(id)).findFirst().orElse(null);
     }
+
+    @Override
+    public List<Order> getAllOrders() {
+        return db;
+    }
 }

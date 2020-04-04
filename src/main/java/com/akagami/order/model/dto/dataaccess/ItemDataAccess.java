@@ -35,5 +35,11 @@ public class ItemDataAccess implements ItemDto {
         return db.stream().filter(item -> item.getAmount() > 0).collect(Collectors.toList());
     }
 
+    @Override
+    public void setStock(Item item) {
+        db.stream().filter(item1 -> item1.getIdItem().equals(item.getIdItem()))
+                .forEach(item1 -> item1.setAmount(0));
+    }
+
 
 }

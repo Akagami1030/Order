@@ -29,26 +29,32 @@ public class OrderService {
         this.orderDto = orderDto;
     }
 
-    public Order makeNewOrder(Customer customer){
+    public Order makeNewOrder(Customer customer) {
         Customer userById = customerDto.getUserById(customer.getIdCustomer());
-        Order newOrder = new Order(getAllItemGroups(),userById);
+        Order newOrder = new Order(getAllItemGroups(), userById);
         orderDto.insertOrder(newOrder);
-        return newOrder;
+        return orderDto.getOrderById(newOrder.getIdOrder());
 
     }
 
-    public void addNewItem(ItemGroup itemGroup){
+    public void addNewItem(ItemGroup itemGroup) {
         itemGroupDto.insertItemGroup(itemGroup);
     }
 
-    public List<ItemGroup> getAllItemGroups(){
+    public List<ItemGroup> getAllItemGroups() {
         return itemGroupDto.getAllItemsGroup();
     }
 
-    public Order getOrderById(UUID idOrder){
-       return orderDto.getOrderById(idOrder);
+    public Order getOrderById(UUID idOrder) {
+        return orderDto.getOrderById(idOrder);
     }
 
+    public void makeItemsGroupListEmpty() {
+        itemGroupDto.cleanTempDb();
+    }
 
+    public List<Order> getAllOrders() {
+        return orderDto.getAllOrders();
+    }
 
 }

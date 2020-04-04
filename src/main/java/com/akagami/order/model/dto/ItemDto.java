@@ -12,6 +12,7 @@ public interface ItemDto {
     Item getItemById(UUID id);
     List<Item> getAllItems();
     List<Item> getItemsAvailables();
+    void setStock(Item item);
 
 
 }

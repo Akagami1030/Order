@@ -22,22 +22,23 @@ public class OrderController {
     }
 
     @PostMapping(consumes = "application/json")
-    void makeNewGroupItem(@RequestBody ItemGroup itemGroup){
+    void makeNewGroupItem(@RequestBody ItemGroup itemGroup) {
         orderService.addNewItem(itemGroup);
     }
+
     @PostMapping(consumes = "application/json", produces = "application/json", path = "/myorder")
-    public Order makeNewOrder(@RequestBody Customer customer){
+    public Order makeNewOrder(@RequestBody Customer customer) {
         Order order = orderService.makeNewOrder(customer);
+        // method to erase the itemisgroups temp db
+        //orderService.makeItemsGroupListEmpty();
         return orderService.getOrderById(order.getIdOrder());
 
     }
+
     @GetMapping(produces = "application/json")
-    public List<ItemGroup> getItemsGroup(){
-       return orderService.getAllItemGroups();
+    public List<Order> getAllOrders() {
+        return orderService.getAllOrders();
     }
 
-    @GetMapping(produces = "application/json", path = "/{id}")
-    public Order getOrderById(@PathVariable UUID id){
-        return orderService.getOrderById(id);
-    }
+
 }
