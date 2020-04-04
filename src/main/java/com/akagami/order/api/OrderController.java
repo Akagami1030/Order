@@ -22,8 +22,8 @@ public class OrderController {
     }
 
     @PostMapping(consumes = "application/json")
-    void makeNewGroupItem(@RequestBody Item item){
-        orderService.addNewItem(item);
+    void makeNewGroupItem(@RequestBody ItemGroup itemGroup){
+        orderService.addNewItem(itemGroup);
     }
     @PostMapping(consumes = "application/json", produces = "application/json", path = "/myorder")
     public Order makeNewOrder(@RequestBody Customer customer){

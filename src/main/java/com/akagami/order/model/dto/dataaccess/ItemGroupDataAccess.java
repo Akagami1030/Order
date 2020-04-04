@@ -24,9 +24,9 @@ public class ItemGroupDataAccess implements ItemGroupDto {
 
 
     @Override
-    public void insertItemGroup(Item item) {
-        Item itemById = itemDto.getItemById(item.getIdItem());
-        db.add(new ItemGroup(itemById, 1));
+    public void insertItemGroup(ItemGroup itemGroup) {
+        Item itemById = itemDto.getItemById(itemGroup.getSelectedItem().getIdItem());
+        db.add(new ItemGroup(itemById, itemGroup.getAmount()));
     }
 
     @Override

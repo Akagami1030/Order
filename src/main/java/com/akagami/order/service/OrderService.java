@@ -37,8 +37,8 @@ public class OrderService {
 
     }
 
-    public void addNewItem(Item item){
-        itemGroupDto.insertItemGroup(item);
+    public void addNewItem(ItemGroup itemGroup){
+        itemGroupDto.insertItemGroup(itemGroup);
     }
 
     public List<ItemGroup> getAllItemGroups(){

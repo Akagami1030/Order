@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ItemGroupDto {
-    void insertItemGroup(Item item);
+    void insertItemGroup(ItemGroup itemGroup);
     List<ItemGroup> getAllItemsGroup();
     void cleanTempDb();
 }
