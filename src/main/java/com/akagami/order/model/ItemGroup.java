@@ -5,12 +5,12 @@ import java.time.LocalDate;
 public class ItemGroup {
     private Item selectedItem;
     private int amount;
-    private LocalDate localDate;
+    private LocalDate shippingdate;
 
     public ItemGroup(Item selectedItem, int amount) {
         this.selectedItem = selectedItem;
         this.amount = amount;
-        this.localDate = LocalDate.now();
+        this.shippingdate = verifyStock();
     }
 
     public Item getSelectedItem() {
@@ -21,7 +21,14 @@ public class ItemGroup {
         return amount;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public LocalDate getShippingdate() {
+        return shippingdate;
+    }
+
+    private LocalDate verifyStock() {
+        if (selectedItem.getAmount() < amount) {
+            return LocalDate.now().plusDays(7);
+        }
+        return LocalDate.now().plusDays(1);
     }
 }

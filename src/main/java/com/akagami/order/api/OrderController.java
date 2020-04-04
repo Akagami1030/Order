@@ -35,4 +35,9 @@ public class OrderController {
     public List<ItemGroup> getItemsGroup(){
        return orderService.getAllItemGroups();
     }
+
+    @GetMapping(produces = "application/json", path = "/{id}")
+    public Order getOrderById(@PathVariable UUID id){
+        return orderService.getOrderById(id);
+    }
 }
